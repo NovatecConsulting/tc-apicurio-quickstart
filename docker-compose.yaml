@@ -1,0 +1,13 @@
+version: '2'
+services:
+
+  #############################################################
+  # Apicurio Registry                                         #
+  #############################################################
+  apicurioregistry:
+    image: apicurio/apicurio-registry-mem:2.1.0.Final
+    hostname: apicurio
+    container_name: apicurio
+    ports:
+      - "8080:8080"
+

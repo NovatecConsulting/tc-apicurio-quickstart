@@ -1,0 +1,35 @@
+= Quickstart Apicurio & AsyncAPI
+
+This repository contains a quickstart setup to test https://www.apicur.io/registry/[Apicurio Registry] and https://www.asyncapi.com/[AsyncAPI]. It simply starts a Docker container for Apicuiro and deploys several AsyncAPI examples as artifacts.
+
+== Prerequisites
+- Installed https://www.docker.com/get-started[Docker] and https://docs.docker.com/compose/install/[Docker-Compose].
+- A Linux-based operating system is needed to execute the setup script.
+
+== Steps
+
+1) Start Apicurio Registry:
+
+[source]
+-----
+docker-compose up -d
+-----
+
+2) Wait a few seconds until Apicurio is running. Deploy the artifacts:
+[source]
+-----
+./artifacts.sh
+-----
+
+2) Navigate to http://localhost:8080 in your browser.
+
+'''
+
+If you want to deploy additional artifacts, you can either use the command line or the user interface of Apicurio:
+[source]
+-----
+curl -X POST -H "Content-type: application/json; artifactType=ASYNCAPI" -H "X-Registry-ArtifactId: my-artifact-id" --data-binary "@./your/path/to/artifact.json" http://localhost:8080/api/artifacts
+-----
+
+The example files can be found at the ./resources directory and are mainly publicly available. Some of them were modified to showcase additional features of AsyncAPI. Other example files can be found at https://github.com/asyncapi/spec/tree/master/examples[AsyncAPI's Github repository].
+
