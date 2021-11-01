@@ -5,7 +5,7 @@ services:
   # Apicurio Registry                                         #
   #############################################################
   apicurioregistry:
-    image: apicurio/apicurio-registry-mem:2.1.0.Final
+    image: apicurio/apicurio-registry-mem:2.1.2.Final
     hostname: apicurio
     container_name: apicurio
     ports:
